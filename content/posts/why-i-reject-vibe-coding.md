@@ -2,7 +2,6 @@
 title = 'Why I Reject Vibe Coding'
 date = 2026-03-17T15:00:00Z
 description = 'A case against treating code as disposable text when the real work is understanding, review, and responsibility.'
-summary = "AI can be useful, but I reject vibe coding because speed without comprehension turns maintenance, security, and accountability into someone else's problem."
 +++
 
 I do not reject AI-assisted programming. I reject the specific attitude now marketed as vibe coding.

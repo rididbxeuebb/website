@@ -2,7 +2,6 @@
 title = 'Why This Site Stays Small'
 date = 2026-03-01T09:00:00Z
 description = 'Why a boring stack still beats shipping a framework for every paragraph.'
-summary = 'A first post about choosing plain documents, predictable CSS, and less front-end ceremony.'
 +++
 
 The web works best when a page behaves like a page. It loads quickly, it reads clearly, and it does not need a bundle graph just to show a headline.

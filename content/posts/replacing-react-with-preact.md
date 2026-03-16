@@ -2,7 +2,6 @@
 title = 'Replacing React with Preact'
 date = 2026-03-17T12:00:00Z
 description = 'A practical case for swapping React for Preact when you want less framework weight without abandoning JSX.'
-summary = 'Why Preact is often enough, what `preact/compat` does, and how JSX turns tags into JavaScript function calls.'
 +++
 
 React made component-based UI normal, but many teams keep paying React's full cost long after their interface stops needing that much machinery. I have become increasingly suspicious of front-end stacks that need a long explanation before they can justify rendering a settings screen and a few forms.
