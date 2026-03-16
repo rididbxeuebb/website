@@ -31,7 +31,8 @@ jobs:
       #     prompt: ${{ inputs.prompt || 'No additional instructions.' }}
 
       - name: Test
-        run: touch ./content/posts/test.md
+        run: |
+          touch ./content/posts/test.md
 
       - name: Run oxfmt
         run: npx oxfmt .
