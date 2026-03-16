@@ -25,12 +25,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Run opencode
-        uses: anomalyco/opencode/github@latest
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
         with:
-          agent: blogger
-          model: opencode/minimax-m2.5-free # opencode/big-pickle
-          prompt: ${{ inputs.prompt || 'No additional instructions.' }}
+          hugo-version: 'latest'
+
+      - name: Setup OpenCode
+        run: curl -fsSL https://opencode.ai/install | bash
+
+      - name: Run OpenCode
+        env:
+          PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
+        run: opencode run --print-logs "$PROMPT"
 
       - name: Run oxfmt
         run: npx oxfmt .
