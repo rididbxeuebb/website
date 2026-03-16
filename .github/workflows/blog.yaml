@@ -1,0 +1,47 @@
+name: blog
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: Prompt
+        required: false
+
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  generate:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Run opencode
+        uses: anomalyco/opencode/github@latest
+        with:
+          agent: blogger
+          # model: opencode/big-pickle
+          prompt: ${{ inputs.prompt || 'No additional instructions.' }}
+
+      - name: Run oxfmt
+        run: npx oxfmt .
+        continue-on-error: true
+
+      - name: Push
+        env:
+          GIT_AUTHOR_NAME: opencode-agent[bot]
+          GIT_AUTHOR_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: opencode-agent[bot]
+          GIT_COMMITTER_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
+        run: |
+          git add content/posts/
+          git diff --cached --quiet && exit 0
+          git commit -m "Add generated blog post"
+          git push
