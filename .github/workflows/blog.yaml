@@ -23,12 +23,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Run opencode
-        uses: anomalyco/opencode/github@latest
-        with:
-          agent: blogger
-          # model: opencode/big-pickle
-          prompt: ${{ inputs.prompt || 'No additional instructions.' }}
+      # - name: Run opencode
+      #   uses: anomalyco/opencode/github@latest
+      #   with:
+      #     agent: blogger
+      #     # model: opencode/big-pickle
+      #     prompt: ${{ inputs.prompt || 'No additional instructions.' }}
+
+      - name: Test
+        run: touch ./content/posts/test.md
 
       - name: Run oxfmt
         run: npx oxfmt .
