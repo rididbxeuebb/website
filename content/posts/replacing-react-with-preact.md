@@ -25,7 +25,7 @@ JSX is part of why the migration can be smaller than people expect. JSX is not H
 After compilation, that turns into ordinary JavaScript describing a node tree.
 
 ```tsx
-jsx("button", { className: "save", children: "Save" })
+jsx('button', { className: 'save', children: 'Save' });
 ```
 
 In older setups the generated call may look more like `h("button", { className: "save" }, "Save")` or `createElement(...)`, but the idea is the same. The browser never executes raw JSX. A tool transforms it first, then React or Preact consumes the resulting function calls to build virtual nodes.
