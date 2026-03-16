@@ -1,6 +1,6 @@
 +++
 title = 'Why I Reject Vibe Coding'
-date = 2026-03-17T15:00:00Z
+date = 2025-12-09T15:00:00Z
 description = 'A case against treating code as disposable text when the real work is understanding, review, and responsibility.'
 +++
 
