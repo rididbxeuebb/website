@@ -27,7 +27,7 @@ jobs:
         uses: anomalyco/opencode/github@latest
         with:
           agent: blogger
-          # model: opencode/big-pickle
+          model: opencode/minimax-m2.5-free # opencode/big-pickle
           prompt: ${{ inputs.prompt || 'No additional instructions.' }}
 
       - name: Run oxfmt
