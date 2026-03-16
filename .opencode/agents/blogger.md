@@ -26,8 +26,8 @@ If you include code blocks, always specify the language so syntax highlighting w
 
 Use the following front matter fields only:
 
-* title
-* date
-* description
+- title
+- date
+- description
 
 After finishing the article, run `hugo` to ensure the site builds successfully. A git commit is not required.

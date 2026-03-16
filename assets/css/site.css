@@ -8,8 +8,8 @@
 
 :root {
   color-scheme: light dark;
-  --font-body: Georgia, "Times New Roman", serif;
-  --font-mono: "Cascadia Mono", Consolas, monospace;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-mono: 'Cascadia Mono', Consolas, monospace;
   --bg: light-dark(#fff, #141414);
   --text: light-dark(#111, #ddd);
   --muted: light-dark(#444, #bbb);
@@ -50,7 +50,10 @@ button,
 input,
 textarea,
 select {
-  transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
 }
 
 a {
