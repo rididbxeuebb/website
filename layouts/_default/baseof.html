@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default site.LanguageCode | default `en` }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+    <link rel="icon" href="data:,">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-shell flow">
+        <p class="site-title"><a href="{{ "/" | relURL }}">{{ site.Title }}</a></p>
+      </div>
+    </header>
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>

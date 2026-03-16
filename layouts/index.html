@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <main id="main" class="site-shell flow home" tabindex="-1">
+    <section class="intro flow">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </section>
+
+    <section class="post-list flow" aria-labelledby="posts-heading">
+      <h2 id="posts-heading">Posts</h2>
+      <ul class="post-index" role="list">
+        {{ range where site.RegularPages.ByDate.Reverse "Section" "posts" }}
+          <li class="post-card flow">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="post-meta">
+              <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format `02 Jan 2006` }}</time>
+            </p>
+            {{ with .Description }}
+              <p>{{ . }}</p>
+            {{ else }}
+              <p>{{ .Summary }}</p>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  </main>
+{{ end }}

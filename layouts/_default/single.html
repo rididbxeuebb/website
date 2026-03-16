@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <main id="main" class="site-shell flow" tabindex="-1">
+    <article class="post flow">
+      <p class="post-back"><a href="{{ "/" | relURL }}">← Back to all posts</a></p>
+
+      <header class="post-header flow">
+        <p class="post-label">Post</p>
+        <h1>{{ .Title }}</h1>
+        <p class="post-meta">
+          <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format `02 Jan 2006` }}</time>
+        </p>
+      </header>
+
+      <div class="post-content flow">
+        {{ .Content }}
+      </div>
+
+    </article>
+  </main>
+{{ end }}
