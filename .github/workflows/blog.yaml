@@ -36,7 +36,7 @@ jobs:
       - name: Run OpenCode
         env:
           PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
-        run: opencode run --print-logs "$PROMPT"
+        run: opencode run "$PROMPT"
 
       - name: Run oxfmt
         run: npx oxfmt .
