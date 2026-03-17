@@ -1,6 +1,6 @@
 +++
 title = 'Replacing React with Preact'
-date = 2025-10-07T12:00:00Z
+date = 2025-05-07T12:00:00Z
 description = 'A practical case for swapping React for Preact when you want less framework weight without abandoning JSX.'
 +++
 

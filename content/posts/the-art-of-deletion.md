@@ -1,6 +1,6 @@
 +++
 title = 'The Art of Deletion'
-date = 2026-03-17T09:00:00Z
+date = 2024-12-17T09:00:00Z
 description = 'Why removing code is a skill worth developing, and how designing for deletion changes the way you write it.'
 +++
 

@@ -10,10 +10,12 @@
     <ul class="post-index" role="list">
       {{ range where site.RegularPages.ByDate.Reverse "Section" "posts" }}
       <li class="post-card flow">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="post-meta">
-          <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format `02 Jan 2006` }}</time>
-        </p>
+        <div class="post-card-header">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="post-meta">
+            <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format `02 Jan 2006` }}</time>
+          </p>
+        </div>
         {{ with .Description }}
         <p>{{ . }}</p>
         {{ else }}

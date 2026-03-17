@@ -186,6 +186,34 @@ blockquote {
   border-block-start: 1px solid var(--line);
 }
 
+.post-card-header {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.post-card-header .post-meta {
+  flex: none;
+  text-align: right;
+}
+
+.post-card-header h3 {
+  flex: 1;
+}
+
+@media (max-width: 40rem) {
+  .post-card-header {
+    gap: 0.35rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-card-header .post-meta {
+    text-align: left;
+  }
+}
+
 .post-card:last-child {
   border-block-end: 1px solid var(--line);
 }

@@ -1,6 +1,6 @@
 +++
 title = 'Why This Site Stays Small'
-date = 2025-11-18T09:00:00Z
+date = 2025-01-18T09:00:00Z
 description = 'Why a boring stack still beats shipping a framework for every paragraph.'
 +++
 
