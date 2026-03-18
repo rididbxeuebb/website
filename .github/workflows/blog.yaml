@@ -21,6 +21,9 @@ jobs:
       pull-requests: write
       issues: write
 
+    env:
+      TZ: UTC
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6

@@ -13,4 +13,3 @@ noClasses = true
 [params]
 tagline = 'Notes from a developer who dislikes the modern bloated web.'
 description = 'A restrained developer blog focused on clear writing, durable markup, and a rejection of unnecessary web complexity.'
-timeZone = 'Asia/Taipei'
