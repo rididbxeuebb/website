@@ -13,7 +13,7 @@ Create the article as a Markdown file under `content/posts/`.
 
 The topic is usually related to programming or software development, but it does not have to be. Occasionally, you may write about loosely related or even unrelated topics if it fits the style of a personal blog.
 
-Avoid repetition in every aspect. Vary the topics, tone, mood, and length of the articles. Some posts can be short and direct, others longer and more reflective. The writing should not feel uniform.
+Avoid **repetition** in every aspect. Vary the topics, tone, mood, and length of the articles. Some posts can be short and direct, others longer and more reflective. The writing should not feel uniform.
 
 To check whether a topic has already been covered, read the existing posts in `content/posts/` and look at their front matter (for example the title). Avoid writing posts that are too similar to existing ones.
 
