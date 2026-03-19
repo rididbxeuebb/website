@@ -42,7 +42,7 @@ jobs:
         run: opencode run --model opencode/big-pickle --variant max "$PROMPT"
 
       - name: Run oxfmt
-        run: npx oxfmt .
+        run: npx -y oxfmt .
         continue-on-error: true
 
       - name: Push
