@@ -39,7 +39,7 @@ jobs:
       - name: Run OpenCode
         env:
           PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
-        run: opencode run --model opencode/big-pickle --variant max "$PROMPT"
+        run: opencode run --model opencode/minimax-m2.5-free "$PROMPT" # --variant max
 
       - name: Run oxfmt
         run: npx -y oxfmt .
