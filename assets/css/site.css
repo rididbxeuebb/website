@@ -135,6 +135,10 @@ main {
   --flow-space: 1.25rem;
 }
 
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
 h1,
 h2,
 h3 {
