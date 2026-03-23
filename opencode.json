@@ -1,5 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "blogger",
-  "model": "opencode/big-pickle"
+  "model": "opencode/minimax-m2.5-free"
 }
