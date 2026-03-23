@@ -51,7 +51,7 @@ jobs:
           GIT_AUTHOR_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: opencode-agent[bot]
           GIT_COMMITTER_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
         run: |
           git add content/posts/
           git diff --cached --quiet && exit 0
