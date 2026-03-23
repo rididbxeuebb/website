@@ -58,4 +58,4 @@ jobs:
           git commit -m "Add generated blog post"
           git push
 
-          gh issue create --repo octocat/Hello-World --title "New article published" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
+          gh issue create --repo octocat/Hello-World --title "🚨 New article published 🚨" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
