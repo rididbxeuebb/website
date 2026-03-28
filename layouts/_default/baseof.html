@@ -18,6 +18,9 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="google-site-verification" content="6u-_uCHrzno_BJCBkoYE4QPi4xJF7dMxELaaWMT0_Yk">
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    {{ with site.Home.OutputFormats.Get "rss" }}
+      <link rel="alternate" type="{{ .MediaType.Type }}" title="{{ site.Title }} RSS" href="{{ .RelPermalink }}">
+    {{ end }}
     {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   </head>
@@ -26,6 +29,9 @@
     <header class="site-header">
       <div class="site-shell flow">
         <p class="site-title"><a href="{{ "/" | relURL }}">{{ site.Title }}</a></p>
+        {{ with site.Home.OutputFormats.Get "rss" }}
+          <p class="site-feed"><a href="{{ .RelPermalink }}">RSS</a></p>
+        {{ end }}
       </div>
     </header>
     {{ block "main" . }}{{ end }}

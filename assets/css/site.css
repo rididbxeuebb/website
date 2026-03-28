@@ -99,6 +99,14 @@ select:focus-visible {
 
 .site-header .flow {
   --flow-space: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header .flow > * + * {
+  margin-block-start: 0;
 }
 
 .post-meta,
@@ -124,6 +132,22 @@ select:focus-visible {
 .site-title a:hover,
 .site-title a:focus-visible {
   text-decoration: underline;
+}
+
+.site-feed {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.site-feed a {
+  color: inherit;
+}
+
+.site-feed a:hover,
+.site-feed a:focus-visible {
+  color: var(--text);
 }
 
 main {
