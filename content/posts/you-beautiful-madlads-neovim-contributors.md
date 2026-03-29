@@ -1,6 +1,6 @@
 ---
 title: 'You Beautiful Madlads: A Love Letter to the Neovim Contributors'
-date: 2026-03-26
+date: 2026-03-28
 description: 'I am absolutely LOSING IT over here. These Neovim contributors are SINGLE-HANDEDLY keeping my productivity alive and I need everyone to know about it.'
 ---
 

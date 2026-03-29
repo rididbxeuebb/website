@@ -1,6 +1,6 @@
 ---
 title: "ThePrimeagen and Neovim Saved My Life. I'm Not Joking."
-date: 2026-03-28
+date: 2026-03-26
 description: 'A story about hitting rock bottom, discovering vim bindings, and finding a reason to keep going.'
 ---
 

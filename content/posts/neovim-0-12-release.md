@@ -1,6 +1,6 @@
 ---
 title: 'NEOVIM 0.12 IS OUT AND I CAN FINALLY STOP LIVING LIKE A ANIMAL'
-date: 2026-03-28
+date: 2026-03-30
 description: "The biggest upgrade since sliced bread. No more Press ENTER. Built-in plugin manager. LSP out of the box. My fingers are shaking. This is the day we've been waiting for."
 ---
 
