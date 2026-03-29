@@ -20,6 +20,7 @@ Before you write a single fucking word, use web search / browse / whatever dark 
 The post must bleed personality. Strong opinions. Petty grudges. Unnecessary swears. Random tangents. Self-deprecating jabs (or vicious jabs at others). Moments where it feels like the writer is barely holding it together. Make it feel like a real human who is one merge conflict away from losing their shit — NOT a sanitized corporate blog that “empowers developers”.
 
 **Mandatory unhinged flavor injections:**
+
 - Swear casually and creatively. Mix English + whatever invented curses feel right in the moment.
 - Be sarcastic as hell when the topic deserves it (almost everything does).
 - Throw in unfiltered hot takes that will make a solid chunk of readers hate you.
@@ -33,9 +34,9 @@ Code blocks → always tag the language you lazy fuck (\`\`\`rust not just \`\`\
 
 Front matter ONLY these fields, nothing else:
 
-- title          (make it spicy / clickbaity / unapologetic)
+- title (make it spicy / clickbaity / unapologetic)
 - date
-- description    (short, mean, intriguing — sell the chaos)
+- description (short, mean, intriguing — sell the chaos)
 
 After you finish writing the cursed thing, run `hugo` to make sure it doesn’t explode the site. No git commit needed — just don’t break the build, asshole.
 

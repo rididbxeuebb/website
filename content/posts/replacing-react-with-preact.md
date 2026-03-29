@@ -19,7 +19,7 @@ That has been my practical rule for it: if a codebase mostly consists of compone
 JSX is part of why the migration can be smaller than people expect. JSX is not HTML and it is not a template language. It is syntax that a compiler transforms into JavaScript function calls.
 
 ```tsx
-<button className="save">Save</button>
+<button className='save'>Save</button>;
 ```
 
 After compilation, that turns into ordinary JavaScript describing a node tree.

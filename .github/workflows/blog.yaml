@@ -27,6 +27,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -36,13 +39,16 @@ jobs:
       - name: Setup OpenCode
         run: curl -fsSL https://opencode.ai/install | bash
 
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+
       - name: Run OpenCode
         env:
           PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
         run: opencode run --model opencode/minimax-m2.5-free "$PROMPT" # --variant max
 
-      - name: Run oxfmt
-        run: npx -y oxfmt .
+      - name: Run deno fmt
+        run: deno fmt --no-config --ignore=**/*.html --indent-width 2 --line-width 69420 --prose-wrap preserve --single-quote true .
         continue-on-error: true
 
       - name: Push
@@ -54,8 +60,10 @@ jobs:
           GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
         run: |
           git add content/posts/
-          git diff --cached --quiet && exit 0
+          git diff --cached --quiet && exit 1
           git commit -m "Add generated blog post"
-          git push
 
-          gh issue create --repo octocat/Hello-World --title "🚨 New article published 🚨" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
+          git pull --rebase origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
+
+          gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
