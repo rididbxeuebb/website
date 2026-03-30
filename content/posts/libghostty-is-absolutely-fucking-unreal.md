@@ -1,6 +1,6 @@
 ---
 title: "libghostty is Absolutely F*cking Unreal and I'm Not Okay"
-date: 2026-03-30
+date: 2026-03-31
 description: "Mitchell Hashimoto just extracted the terminal core from Ghostty and gave it to us as a C library. I've ascended. Send help."
 ---
 
