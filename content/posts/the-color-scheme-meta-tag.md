@@ -36,7 +36,7 @@ The meta tag alone only affects browser chrome. For your own content, you still 
 
 ```css
 :root {
-  color-scheme: light dark;
+   color-scheme: light dark;
 }
 ```
 

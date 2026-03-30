@@ -53,14 +53,14 @@ From these four primitives — `[]`, `!`, and `+` — JSFuck builds everything. 
 ```javascript
 ![]; // false
 !![] + // true
-  []; // 0
+   []; // 0
 !+[](
-  // 1 (negating zero gives us the string "0", which becomes truthy? No wait, +[] is 0, so !+[] is !0 which is true, but that's not quite right either - !+[] is the logical NOT of 0, which is true, which when coerced to a number is 1)
+   // 1 (negating zero gives us the string "0", which becomes truthy? No wait, +[] is 0, so !+[] is !0 which is true, but that's not quite right either - !+[] is the logical NOT of 0, which is true, which when coerced to a number is 1)
 
-  ![] + [],
+   ![] + [],
 )[+[]](
-  // 'f' - accessing index 0 of "false"
-  ![] + [],
+   // 'f' - accessing index 0 of "false"
+   ![] + [],
 )[+!+[]]; // 'a' - accessing index 1 of "false"
 ```
 
@@ -78,14 +78,14 @@ Now. You wanted examples. You wanted things that make people need therapy after 
 
 ```javascript
 [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (!![] + [])[+[]] + (!![] + [])[!+[] + !+[] + !+[]] + (!![] + [])[+!+[]]][
-  [][
-    (![] + [])[+[]] +
-    ([![]] + [][[]])[+!+[] + [+[]]] +
-    (![] + [])[!+[] + !+[]] +
-    (!![] + [])[+[]] +
-    (!![] + [])[!+[] + !+[] + !+[]] +
-    (!![] + [])[+!+[]]
-  ][+!+[] + [+[]]] + (!![] + [])[+!+[]]
+   [][
+      (![] + [])[+[]] +
+      ([![]] + [][[]])[+!+[] + [+[]]] +
+      (![] + [])[!+[] + !+[]] +
+      (!![] + [])[+[]] +
+      (!![] + [])[!+[] + !+[] + !+[]] +
+      (!![] + [])[+!+[]]
+   ][+!+[] + [+[]]] + (!![] + [])[+!+[]]
 ]();
 ```
 
@@ -103,8 +103,8 @@ Run that. Watch it print "yo". Now add the second part:
 
 ```javascript
 ([][[]] + [])[!+[] + !+[]] +
-  (+(+!+[] + [+!+[]] + [+!+[]] + [!+[] + !+[] + !+[]]) + [])[!+[] + !+[] + !+[]] +
-  (![] + [])[!+[] + !+[] + !+[]];
+   (+(+!+[] + [+!+[]] + [+!+[]] + [!+[] + !+[] + !+[]]) + [])[!+[] + !+[] + !+[]] +
+   (![] + [])[!+[] + !+[] + !+[]];
 ```
 
 That's "ur mom". Built from brackets and plus signs. Every letter extracted from coerced strings. Every character pulled from the void. You could paste this into a code review and the reviewer would have no idea what they're looking at. They might just assume it's broken and move on. That's the genius. That's the horror.

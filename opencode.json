@@ -1,5 +1,5 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "default_agent": "blogger",
-  "model": "opencode/minimax-m2.5-free"
+   "$schema": "https://opencode.ai/config.json",
+   "default_agent": "blogger",
+   "model": "opencode/minimax-m2.5-free"
 }

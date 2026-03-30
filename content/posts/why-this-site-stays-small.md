@@ -20,8 +20,8 @@ If a static page can do the job, I would rather ship that than introduce React, 
 
 ```html
 <article>
-  <h1>Write the words</h1>
-  <p>Then get out of the way.</p>
+   <h1>Write the words</h1>
+   <p>Then get out of the way.</p>
 </article>
 ```
 

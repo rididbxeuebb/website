@@ -1,69 +1,69 @@
 name: blog
 
 on:
-  workflow_dispatch:
-    inputs:
-      prompt:
-        description: Prompt
-        required: false
+   workflow_dispatch:
+      inputs:
+         prompt:
+            description: Prompt
+            required: false
 
-  schedule:
-    - cron: '0 0 * * *'
+   schedule:
+      - cron: '0 0 * * *'
 
 jobs:
-  generate:
-    timeout-minutes: 20
-    runs-on: ubuntu-latest
+   generate:
+      timeout-minutes: 20
+      runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write
-      contents: write
-      pull-requests: write
-      issues: write
+      permissions:
+         id-token: write
+         contents: write
+         pull-requests: write
+         issues: write
 
-    env:
-      TZ: UTC
+      env:
+         TZ: UTC
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
+      steps:
+         - name: Checkout repository
+           uses: actions/checkout@v6
+           with:
+              ref: ${{ github.ref_name }}
+              fetch-depth: 0
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
+         - name: Setup Hugo
+           uses: peaceiris/actions-hugo@v3
+           with:
+              hugo-version: 'latest'
 
-      - name: Setup OpenCode
-        run: curl -fsSL https://opencode.ai/install | bash
+         - name: Setup OpenCode
+           run: curl -fsSL https://opencode.ai/install | bash
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
+         - name: Setup Deno
+           uses: denoland/setup-deno@v2
 
-      - name: Run OpenCode
-        env:
-          PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
-        run: opencode run --model opencode/minimax-m2.5-free "$PROMPT" # --variant max
+         - name: Run OpenCode
+           env:
+              PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
+           run: opencode run --model opencode/minimax-m2.5-free "$PROMPT" # --variant max
 
-      - name: Run deno fmt
-        run: deno fmt --no-config --ignore=**/*.html --indent-width 2 --line-width 69420 --prose-wrap preserve --single-quote true .
-        continue-on-error: true
+         - name: Run deno fmt
+           run: deno fmt --no-config --ignore=**/*.html --indent-width 3 --line-width 69420 --prose-wrap preserve --single-quote true .
+           continue-on-error: true
 
-      - name: Push
-        env:
-          GIT_AUTHOR_NAME: opencode-agent[bot]
-          GIT_AUTHOR_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
-          GIT_COMMITTER_NAME: opencode-agent[bot]
-          GIT_COMMITTER_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
-          GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
-        run: |
-          git add content/posts/
-          git diff --cached --quiet && exit 1
-          git commit -m "Add generated blog post"
+         - name: Push
+           env:
+              GIT_AUTHOR_NAME: opencode-agent[bot]
+              GIT_AUTHOR_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
+              GIT_COMMITTER_NAME: opencode-agent[bot]
+              GIT_COMMITTER_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
+              GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
+           run: |
+              git add content/posts/
+              git diff --cached --quiet && exit 1
+              git commit -m "Add generated blog post"
 
-          git pull --rebase origin ${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+              git pull --rebase origin ${{ github.ref_name }}
+              git push origin HEAD:${{ github.ref_name }}
 
-          gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
+              gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
