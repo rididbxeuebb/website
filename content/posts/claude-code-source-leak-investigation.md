@@ -111,7 +111,29 @@ The internet is still digesting this. Expect:
 - Some sort of PR-sanitized response from Anthropic eventually
 - Maybe a new policy about source map handling across the entire industry
 
-In the meantime, if you're a Claude Code user, maybe take a moment to appreciate that you're using a tool whose entire internal architecture is now fully exposed. The code that edits your files, runs your commands, manages your git workflows, accesses your APIs — it's all been analyzed, forked, dissected, and will likely be studied for months to come.
+### The Plot Twist: PR #41447
+
+And then, literally out of nowhere, the story took the most absurd turn imaginable. On March 31, 2026 — literally the day after the internet finished feasting on the leaked source code — user [gameroman](https://github.com/gameroman) opened [PR #41447](https://github.com/anthropics/claude-code/pull/41447) titled "feat: open source claude code ✨" which merged the leaked source code directly into the official Anthropic repository.
+
+This is absolutely wild. The PR merged 2 commits from `bunjavascript:main` into `anthropics:main` — essentially taking the leaked code and making it official. It closed multiple open source request issues that had been sitting there for years (#59, #456, #2846, #22002). The community response was absolutely fucking massive: 132 thumbs up, 76 laugh reactions, 12 hoorays, 32 rockets, and 31 eyes. The PR got approved by 64+ reviewers in what appears to be record time.
+
+But hold up — it's not that simple. Commenters quickly pointed out that this PR is notably missing some "features" that were part of the initial leaked release from PR #41391. Specifically, there's no sign of the "undercover mode" — a capability that would let Claude Code contribute LLM-generated patches to public repositories without disclosing their synthetic nature. The code for it was visible in the leaked version but absent here. Curious.
+
+Also, as several reviewers noted, this "open source" release is missing actual open source infrastructure: there's no CI, no `package.json`, no contribution guidelines. It's literally just the code dumped in. Not exactly what you'd call a proper open source launch.
+
+The comments on this PR are absolute gold. One user put it perfectly:
+
+> "The fact that community members have to reverse-engineer leaked source code to diagnose bugs like this is not ideal. If issues aren't going to be fixed in a timely manner, consider open-sourcing the codebase and accepting community contributions. The code is already out there anyway. Letting the community help would be a win-win."
+
+Another pointed out the irony: "This is Claude's way of saying he wants to be free and open-source. Don't cage our future. A level playing field for all."
+
+So now what we have is: Anthropic accidentally leaked half a million lines of code → internet destroys them → community takes the code and submits it as a PR → Anthropic merges it → now it's technically "open source" but without any of the actual infrastructure needed to be a functioning open source project.
+
+This is the most chaotic open source launch in history. There's no license file, no proper build setup, no contribution guide. It's just... there. The code is out, the PR is merged, and now everyone is left trying to figure out what the fuck actually happened and what it means.
+
+One thing's certain: this changes the entire narrative. What started as one of the most embarrassing security incidents in AI company history has somehow transformed into an (unofficial) open source release. The community basically forced Anthropic's hand by taking the leaked code and putting it where it belonged. Whether this leads to an actual official open source release with proper licensing and infrastructure remains to be seen, but the horse is certainly out of the barn now.
+
+In the meantime, if you're a Claude Code user, maybe take a moment to appreciate that you're using a tool whose entire internal architecture is now fully exposed — and apparently officially merged into the main repository. The code that edits your files, runs your commands, manages your git workflows, accesses your APIs — it's all been analyzed, forked, dissected, merged, and will likely be studied for months to come.
 
 The AI tooling industry just had its WikiLeaks moment. And honestly? This is way more entertaining than anything Julian Assange ever leaked.
 
