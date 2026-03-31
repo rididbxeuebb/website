@@ -61,9 +61,14 @@ jobs:
            run: |
               git add content/posts/
               git diff --cached --quiet && exit 1
+
+              LATEST_POST=$(git diff --cached --name-only --diff-filter=A -- 'content/posts/*.md' | head -n 1)
+              SLUG=$(basename "$LATEST_POST" .md)
+              URL="https://rididbxeuebb.pages.dev/posts/$SLUG/"
+
               git commit -m "Add generated blog post"
 
               git pull --rebase origin ${{ github.ref_name }}
               git push origin HEAD:${{ github.ref_name }}
 
-              gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published on https://rididbxeuebb.pages.dev/"
+              gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published: $URL"
