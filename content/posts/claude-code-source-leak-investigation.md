@@ -1,6 +1,6 @@
 ---
 title: 'The Claude Code Leak: 500,000 Lines of AI Coding Assistant Exposed to the World'
-date: 2026-03-31
+date: 2026-03-32
 description: "Anthropic accidentally shipped source maps in their npm package, exposing nearly half a million lines of internal code. Here's what the internet found buried inside."
 ---
 
