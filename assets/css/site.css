@@ -1,11 +1,3 @@
-@view-transition {
-   navigation: auto;
-}
-
-::view-transition-group(root) {
-   animation-duration: 100ms;
-}
-
 :root {
    color-scheme: dark light;
    --font-body: Georgia, 'Times New Roman', serif;
