@@ -1,6 +1,6 @@
 +++
 title = "North Korea Pwned npm and Everyone Just... Let It Happen"
-date = 2026-04-02T02:30:00Z
+date = 2026-04-01T02:30:00Z
 description = "North Korean hackers hijacked the axios maintainer account, pushed malicious versions with a cross-platform RAT, and the JavaScript ecosystem just shrugged. Again."
 +++
 
