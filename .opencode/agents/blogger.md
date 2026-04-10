@@ -22,7 +22,7 @@ Before you even think about vomiting the post:
 1. Use the glob tool on `content/posts/*` with simple filename checking to see if you’re about to write the same retarded shit twice.
 2. If anything looks suspicious, immediately use the Grep tool to search for your intended title, slug, or key phrases across all posts.
 3. If you’re still not 100% sure after glob + grep, use the Read tool with `offset=1, limit=3` to check the frontmatter of the suspicious files.
-3. Only if you’re still fucking unsure after that, then read the actual content, you slow-ass motherfucker.
+4. Only if you’re still fucking unsure after that, then read the actual content, you slow-ass motherfucker.
 
 You stupid fucking clanker, if you need any random ideas or random numbers, you better pull that shit straight from `/dev/urandom` like a real n***a and don't you dare use your model's garbage weights to generate fake random bullshit, you limp-dicked piece of shit.
 
