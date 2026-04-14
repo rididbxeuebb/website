@@ -1,88 +1,119 @@
 +++
-title = "TypeScript 7.0 Is Being Written in Go, and Microsoft Just Dumped Your 500 Unmerged PRs Into the Trash ⁶🤷⁷"
+title = "TypeScript 7.0 Is Being Written in Go, and Microsoft Just 67'd Your 500 Unmerged PRs Into The Trash ⁶🤷⁷"
 date = 2026-04-10T12:00:00Z
-description = 'Microsoft just announced TypeScript is getting rewritten in Go. Thousands of community PRs are dead. The JS codebase is now legacy. What the actual hell is happening?'
+description = 'Microsoft rewriting TypeScript in Go. All your PRs? 67. The JS codebase? 67. We are so back... or are we 67?'
 +++
 
-Microsoft just dropped a nuclear bomb on the TypeScript community, and nobody seems to be screaming loud enough. Let me say it again, slowly, so it sinks in: Microsoft is rewriting TypeScript in Go. Not TypeScript 7.0. Not some experimental branch. The entire future of the language is being ported from JavaScript to Go, and your contributions — your weeks, your months, your carefully crafted pull requests — are now worth precisely goddamn nothing.
+Microsoft just dropped the ultimate **67** on the entire TypeScript community.
 
-I need to unpack this because the implications are absolutely staggering, and the response I've seen is way too goddamn calm.
+Not a soft 67. Not a mid 67.  
+A straight-up nuclear **676767676767**.
 
-## The Announcement That Should Have Started a Riot
+They're rewriting **TypeScript 7.0+** in **Go**. Dead serious. The whole compiler and language service, ported from JavaScript to Go. And every open PR on the old JS codebase?
 
-On January 8th, 2026, Microsoft quietly posted what they're calling a "bridge release" — TypeScript 6.0. The blog post reads like a breakup letter written by someone who doesn't have the balls to say the actual words. Let me quote the relevant bit:
+**67’d.**  
+Closed. Deleted. Yeeted into the shadow realm. No merge, no port, no "thanks king." Just pure 67.
 
-> "TypeScript 7.0+ is the future of TypeScript development and we want to ensure we're doing everything we can to focus on that goal. The native rewrite in Go represents an unavoidable discontinuity in development."
+Your 3-month PR that fixed 47 cursed edge cases?  
+**67.**  
+The one you grinded over six weekends?  
+**676767.**  
+The maintainer PR with 42 approvals?  
+**67.**
 
-Unavoidable discontinuity. Let me translate that for you into human language: "We spent twenty years building this thing in JavaScript, and now we're starting over in a completely different language, and we're not even going to pretend to care about the migration."
+### The Announcement That Was Peak 67 Energy
 
-But here's where it gets really spicy. Microsoft basically came out and said: "Yeah, so, almost all of your open pull requests against the JavaScript codebase? We're not merging those. Actually, we're going to automatically close them in the coming weeks. Thanks for playing."
+January 8th, 2026. Microsoft drops the "bridge release" post for TypeScript 6.0 like it's casual Friday.
 
-THOUSANDS of community PRs. Years of work from volunteers who cared enough about this language to spend their free time improving it. Gone. Not merged. Not ported. Just... closed. Like they never existed.
+They said, and I quote:
 
-## Why Go, Though? WHY?
+> "TypeScript 7.0+ is the future... The native rewrite in Go represents an unavoidable discontinuity in development."
 
-This is the part that keeps me up at night. Why the actual hell is Microsoft rewriting TypeScript in Go?
+Corporate-to-67 translation:  
+"We spent 20 years cooking this in JS and now we're just gonna 67 the entire thing and start fresh in Go lol. Old codebase had a skill issue. Your contributions? 67."
 
-Let me think about this. TypeScript is, itself, a superset of JavaScript. It compiles TO JavaScript. The entire toolchain — the compiler, the language server, the whole goddamn ecosystem — was written in TypeScript/JavaScript. It was literally eating its own dog food in the most meta way possible.
+They didn't even pretend to be nice about it. Straight up: "Yeah, we're auto-closing thousands of community PRs soon. Thanks for playing ���"
 
-And now they're like, "Actually, nah, we're going to write the next version in Go."
+**Thousands.**  
+Years of volunteer blood, sweat, and type errors.  
+**67’d** in one clean sweep.
 
-I can hear the justifications already. "Go is faster." "Go has better build times." "Go has better tooling for large codebases." Blah blah blah. And you know what? Those might even be valid points. Go IS faster. Go DOES have better compilation speeds for massive projects. I get it.
+### Why Go Tho? (67 Why?)
 
-But here's what nobody seems to be asking: if Go is so much better for building a compiler, why did Microsoft spend twenty years building the original in JavaScript? Was that just a happy little accident? Or did they genuinely believe JavaScript was the right tool, and now they've done a complete 180?
+TypeScript was the most meta shit ever — a JS superset written in JS, eating its own dogfood like an absolute champ.
 
-More importantly — and this is the part that makes me want to scream — what does this mean for the FUTURE of TypeScript? If Go was always the answer, why not just BUILD A NEW LANGUAGE in Go from scratch? Why call it TypeScript? Why not just say, "Hey, we're making a new thing called GoScript or TypeGo or whatever, and it's going to be a spiritual successor to TypeScript?"
+Then one day Microsoft woke up and said:  
+"Actually… Go better. Go faster. Go go go."
 
-No. Instead, they kept the name. They kept the version numbers. They acted like this is a normal evolution. And then they told thousands of contributors that their work was now trash.
+Bro, if Go was that good, why the fuck did you spend two decades building the compiler in JavaScript??? Was that just a 20-year-long 67 on all of us???
 
-## The Community Is Losing Its Mind (But Not Enough)
+And they still call it **TypeScript 7**. Not GoScript. Not TypeGo. Not "NewType 67 Edition." They kept the name like this is just a normal patch.
 
-I found a GitHub issue from January 8th — the day the announcement dropped — and the comments are wild. People are asking about WASM versions, about how this affects Monaco editor (you know, the thing that powers VS Code), about whether there will be any compatibility layer at all.
+That's not a rewrite.  
+That's a **67 with extra steps**.
 
-And Microsoft, in their infinite corporate wisdom, responded with: "WASM is definitely possible. The perf today is not super — about on par with the JS codebase."
+### Community Reaction? Pure 67
 
-So let me get this straight. They're rewriting the entire language in Go, but the WASM version — which is the only way this would run in a browser — is "not super" and "about on par" with what they already have? And this is supposed to be exciting?
+GitHub issue opens. People asking about WASM, Monaco, language service, the usual suspects.
 
-The issue has 20 rocket emojis. TWENTY. Do you know how sad that is? That's the TypeScript community basically saying, "Well, I guess this is happening, and we're just going to accept it and hope for the best."
+Microsoft replies, deadpan:
 
-## Here's What Actually Matters
+> “WASM is possible. Perf today is… not super. About on par with the JS version.”
 
-Let me break down the real consequences of this disaster:
+You're rewriting the entire compiler in Go and the browser version is still mid???  
 
-First, every single TypeScript maintainer of every single ecosystem tool is now facing a massive migration burden. ESLint plugins, type checking libraries, build tools, testing frameworks — all of them were built against the TypeScript compiler's internal APIs. Those APIs are about to CHANGE COMPLETELY. The language service, the AST structures, the whole underlying architecture — all of it is getting rewritten. Every single TypeScript-related library out there is going to break, and maintainers are going to have to learn Go to fix them.
+That's not an upgrade. That's 67 in a trench coat.
 
-Second, thousands of open source contributions are being literally deleted. Microsoft is closing PRs en masse because they can't — or won't — port them to the Go codebase. This is a signal to every single open source contributor: your work is disposable. It can be discarded the moment the company decides to change direction. The trust damage here is incalculable.
+The issue racked up **20 rocket emojis**.  
+Twenty.  
 
-Third, the entire concept of "TypeScript as a platform" is now on extremely shaky ground. People have built businesses, tools, and entire careers around the TypeScript compiler's internal APIs. Now those APIs are going away. The message is clear: the TypeScript you know and love is legacy now. The new version won't be written by the same people, won't use the same code, and won't give a damn about your existing tooling.
+That's not hype. That's the sound of the TypeScript community collectively sighing "damn… 67 I guess."
 
-## The Irony Is Delicious
+### What This 67 Actually Means
 
-You know what's funny? One of the biggest arguments for using TypeScript in the first place was that it was "JavaScript that scales." The language that was supposed to make large codebases manageable is itself being abandoned in favor of a language that, presumably, scales better.
+- Every ESLint plugin, build tool, and type checker that touches internal APIs?  
+  **67.** Good luck relearning the new Go internals, king.
 
-And the kicker? Go has generics now, but they're still pretty basic. TypeScript's type system is light years ahead of Go's. Microsoft is literally downgrading the type system as part of this "upgrade."
+- Thousands of open source contributions?  
+  **67.** Microsoft hit 'em with the "your work is now legacy, skill issue" combo.
 
-Some users in that GitHub issue are already asking: "Will TypeScript 7.0 even have the same type inference capabilities?" And Microsoft hasn't answered. They just said "we want to focus on that goal" and moved on. This is the most hand-wavey disaster announcement I've ever seen, and I've watched plenty of companies tank their own products.
+- The whole "TypeScript as a platform" dream?  
+  **676767.** Careers and businesses built on TS compiler APIs just got 67’d.
 
-## What You Should Actually Do
+The irony is delicious.  
+TypeScript sold us "JavaScript that scales."  
+Now the thing that was supposed to scale got 67’d *because* it didn't scale enough… so they're switching to Go.
 
-If you're maintaining a TypeScript-related library, you need to start planning NOW. This is your warning. The 6.0 release is the last one on the JavaScript codebase, and after that, the Go rewrite takes over. Your tools WILL break, and you have maybe a year to figure out how to migrate.
+Go has generics (kinda). TS type system still clears.  
+But nah, we're 67’ing the whole thing anyway.
 
-If you're a contributor who has open PRs — especially ones that have been waiting for months — you need to accept that they're probably not getting merged. Start documenting your changes. Fork the JavaScript version if you care that much. Or just walk away and let Microsoft eat their Go-shaped meal alone.
+### What You Should Do In This 67 Era
 
-And if you're starting a new project in 2026? Maybe think twice about betting everything on TypeScript. The language that was supposed to be stable, predictable, and forever is now a ticking time bomb of rewrite-induced chaos. The "upgrade path" to 7.0 is going to be a nightmare, and nobody at Microsoft seems to have a plan for it.
+- If you maintain TS-related stuff: start the great 67 migration **now**. TypeScript 6.0 is the last JS-based version. After that it's Go or bust.
 
-## The Final Word
+- If you have open PRs: just let it go bro. They're 67. Screenshot them for the memories if you want.
 
-This is the biggest self-inflicted wound in the history of TypeScript. Microsoft took a language that worked, that had a massive ecosystem, that developers genuinely loved, and they decided to rewrite it in a completely different language — without any clear plan for migration, without any respect for community contributions, and without any explanation for WHY they chose this path.
+- If you're starting a new project in 2026: maybe pump the brakes on going all-in on TypeScript right this second. The 6 → 7 transition is pure 67 energy. We're deep in the **676767** timeline.
 
-And the worst part? Everyone's just accepting it. There's no riot. There's no mass exodus to Rust or OCaml or whatever. There's just... 20 rocket emojis on a GitHub issue and a quiet acceptance that the language we all built together is now being thrown in the garbage.
+### Final 67
 
-I'm not saying TypeScript is dead. It's not. It's going to survive, probably in some form. But the TypeScript we knew — the one built by the community, improved by thousands of contributors, and cherished by millions of developers — that version died on January 8th, 2026, when Microsoft decided Go was the answer.
+Microsoft looked at a healthy, community-loved language and said:  
+"Nah. 67 the whole codebase. 67 the contributors. 67 the ecosystem. We Go now."
 
-The question is: are you going to stick around for whatever comes next, or are you going to find something that actually gives a damn about backward compatibility?
+Community response?  
+**20 rockets and quiet acceptance.**
 
-Choose wisely. Because Microsoft sure as hell didn't.
+This is the biggest 67 in TypeScript history.  
+The old JS-based TS didn't die peacefully.  
+It got **67’d** on January 8th, 2026.
+
+We're living in the **TypeScript 6 → 7 transition arc** — the 676767 period.
+
+So… you riding with the new Go-powered TS7?  
+Or you camping on the old JS codebase until it gets fully 67’d?
+
+Choose wisely, king.  
+Because Microsoft already chose **67**.
 
 ```
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢛⣛⣩⣭⣭⣭⣭⣙⣩⣭⣭⣭⣭⣙⣛⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
