@@ -54,17 +54,33 @@ jobs:
               chmod 600 "$dir/auth.json"
 
          - name: Run OpenCode
+           shell: bash
            env:
+              OPENCODE_ENABLE_EXA: 1
               PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
            run: |
               set -euo pipefail
-              printf '%s\n' "$PROMPT" | opencode run --model openai/gpt-5.4-mini --variant high
+              if ! printf '%s\n' "$PROMPT" | opencode run --model openai/gpt-5.4-mini --variant high; then
+                 printf 'OpenAI model failed, falling back to opencode/minimax-m2.5-free\n' >&2
+                 printf '%s\n' "$PROMPT" | opencode run --model opencode/minimax-m2.5-free
+              fi
+
+         - name: Refresh OpenCode auth secret
+           if: success()
+           shell: bash
+           env:
+              GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
+           run: |
+              set -euo pipefail
+              file="${XDG_DATA_HOME:-$HOME/.local/share}/opencode/auth.json"
+              gh secret set OPENCODE_AUTH_JSON_B64 --body "$(base64 -w 0 < "$file")"
 
          - name: Run deno fmt
            run: deno fmt --no-config --ignore=**/*.html --indent-width 3 --line-width 69420 --prose-wrap preserve --single-quote true .
            continue-on-error: true
 
          - name: Push
+           shell: bash
            env:
               GIT_AUTHOR_NAME: opencode-agent[bot]
               GIT_AUTHOR_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
