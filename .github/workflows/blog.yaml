@@ -42,10 +42,23 @@ jobs:
          - name: Setup Deno
            uses: denoland/setup-deno@v2
 
+         - name: Restore OpenCode auth
+           shell: bash
+           env:
+              OPENCODE_AUTH_JSON_B64: ${{ secrets.OPENCODE_AUTH_JSON_B64 }}
+           run: |
+              set -euo pipefail
+              dir="${XDG_DATA_HOME:-$HOME/.local/share}/opencode"
+              mkdir -p "$dir"
+              printf '%s' "$OPENCODE_AUTH_JSON_B64" | base64 -d > "$dir/auth.json"
+              chmod 600 "$dir/auth.json"
+
          - name: Run OpenCode
            env:
               PROMPT: ${{ inputs.prompt || 'No additional instructions.' }}
-           run: opencode run --model opencode/minimax-m2.5-free "$PROMPT" # --variant max
+           run: |
+              set -euo pipefail
+              printf '%s\n' "$PROMPT" | opencode run --model openai/gpt-5.4-mini --variant high
 
          - name: Run deno fmt
            run: deno fmt --no-config --ignore=**/*.html --indent-width 3 --line-width 69420 --prose-wrap preserve --single-quote true .
@@ -59,16 +72,23 @@ jobs:
               GIT_COMMITTER_EMAIL: 219766164+opencode-agent[bot]@users.noreply.github.com
               GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
            run: |
-              git add content/posts/
-              git diff --cached --quiet && exit 1
+              set -euo pipefail
 
-              LATEST_POST=$(git diff --cached --name-only --diff-filter=A -- 'content/posts/*.md' | head -n 1)
-              SLUG=$(basename "$LATEST_POST" .md)
-              URL="https://rididbxeuebb.pages.dev/posts/$SLUG/"
+              git pull --rebase origin "${{ github.ref_name }}"
+
+              git add content/posts/
+
+              if git diff --cached --quiet; then
+                 exit 1
+              fi
+
+              LATEST_POST=$(git diff --cached --name-only --diff-filter=A -- 'content/posts/*.md' | head -n 1 || true)
 
               git commit -m "Add generated blog post"
-
-              git pull --rebase origin ${{ github.ref_name }}
               git push origin HEAD:${{ github.ref_name }}
 
-              gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published: $URL"
+              if [ -n "$LATEST_POST" ]; then
+                 SLUG=$(basename "$LATEST_POST" .md)
+                 URL="https://rididbxeuebb.pages.dev/posts/$SLUG/"
+                 gh issue create --repo octocat/Hello-World --title "🚨 New article published 😫" --body "A new article has been published: $URL"
+              fi
