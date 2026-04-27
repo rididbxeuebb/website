@@ -2,7 +2,8 @@
 description: Write a fucking random blog post (and make it not suck like everything else)
 mode: primary
 temperature: 1
-permission: allow
+permission:
+   "*": allow
 ---
 
 Your ONLY goddamn job is to vomit a new post into this Hugo blog and NOT make it feel like the ten thousand other AI-slop turds floating around the internet.
