@@ -1,5 +1,6 @@
 :root {
    color-scheme: dark light;
+   scrollbar-color: GrayText transparent;
    --font-body: Georgia, 'Times New Roman', serif;
    --font-mono: 'Cascadia Mono', Consolas, monospace;
    --bg: light-dark(#fff, #141414);
