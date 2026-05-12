@@ -1,5 +1,9 @@
 baseURL = 'https://rididbxeuebb.pages.dev'
-languageCode = 'en'
+defaultContentLanguage = 'en'
+
+[languages.en]
+locale = 'en'
+label = 'English'
 title = 'rididbxeuebb'
 disableKinds = ['taxonomy', 'term', 'section']
 
